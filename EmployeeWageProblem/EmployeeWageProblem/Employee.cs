@@ -8,17 +8,23 @@ namespace EmployeeWageProblem
 {
     public class Employee
     {
-        const int PRESENT = 1;
+        const int ISFULLTIME = 1;
         const int WAGEPERHOUR = 20;
+        const int ISPARTTIME = 2;
         public void CheckAttendence()
         {
             int FullDayHrs = 8;
             Random random = new Random();
-            int attendence = random.Next(0,2);
-            if (attendence == PRESENT)
+            int attendence = random.Next(0,3);
+            if (attendence == ISFULLTIME)
             {
                 FullDayHrs = 8;
                 Console.WriteLine("Employee is Present");
+            }
+            else if (attendence == ISPARTTIME)
+            {
+                FullDayHrs= 4;
+                Console.WriteLine("Employee is working PartTime");
             }
             else
             {
