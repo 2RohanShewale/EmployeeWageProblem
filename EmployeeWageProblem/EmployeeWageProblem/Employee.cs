@@ -8,15 +8,24 @@ namespace EmployeeWageProblem
 {
     public class Employee
     {
-        const int FULLTIME = 1;
+        const int PRESENT = 1;
+        const int WAGEPERHOUR = 20;
         public void CheckAttendence()
         {
+            int FullDayHrs = 8;
             Random random = new Random();
             int attendence = random.Next(0,2);
-            if (attendence == 1)
-                Console.WriteLine("Employee is present");
+            if (attendence == PRESENT)
+            {
+                FullDayHrs = 8;
+                Console.WriteLine("Employee is Present");
+            }
             else
-                Console.WriteLine("Employee is absent");
+            {
+                FullDayHrs= 0;
+                Console.WriteLine("Employee is Absent");
+            }
+            Console.WriteLine("Daily wage: " + FullDayHrs*WAGEPERHOUR);
         }
     }
 }
