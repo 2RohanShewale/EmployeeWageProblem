@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,14 +12,14 @@ namespace EmployeeWageProblem
         const int ISFULLTIME = 1;
         const int WAGEPERHOUR = 20;
         const int ISPARTTIME = 2;
-        const int TOTALWORKINGDAYS = 20;
+        const int TOTALWORKINGDAYS = 20, MAXIMUMHRS=100;
 
         public void CheckAttendence()
         {
-              int TotalHrs = 0;
+              int TotalHrs = 0,day=1;
 
         Random random = new Random();
-            for (int day = 1; day <= TOTALWORKINGDAYS; day++)
+            while (day<=TOTALWORKINGDAYS && day<=100)
             {
                 int attendence = random.Next(0, 3);
                 string message = "Day " + day + ": ";
@@ -38,6 +39,7 @@ namespace EmployeeWageProblem
                         break;
                 }
                 Console.WriteLine(message);
+                day++;
             }
             
         
