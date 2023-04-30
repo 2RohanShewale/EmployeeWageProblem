@@ -19,7 +19,7 @@ namespace EmployeeWageProblem
               int TotalHrs = 0,day=1;
 
         Random random = new Random();
-            while (day<=TOTALWORKINGDAYS && day<=100)
+            while (day <= TOTALWORKINGDAYS && day <= 100)
             {
                 int attendence = random.Next(0, 3);
                 string message = "Day " + day + ": ";
@@ -41,8 +41,6 @@ namespace EmployeeWageProblem
                 Console.WriteLine(message);
                 day++;
             }
-            
-        
             Console.WriteLine("Total wage: " + TotalHrs*WAGEPERHOUR);
         }
     }
